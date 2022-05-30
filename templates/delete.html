@@ -1,0 +1,44 @@
+{% extends 'base.html'%}
+
+{% block content %}
+<div class="container py-6">
+    <div class="row justify-content-md-center">
+        <div class="card card-frame col-8">
+          <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+            <div class="row">
+              <div class="icon icon-lg icon-shape bg-gradient-{{ color }} shadow-{{ color }} text-center border-radius-xl mt-n4 position-absolute">
+                <i class="material-icons opacity-10">{{icon_name}}</i>
+              </div>
+              <div class="bg-gradient-{{ color }} shadow-{{ color }} text-center border-radius-lg pt-4 pb-3">
+                <h6 class="text-white text-capitalize ps-3">{{ header_title }}</h6>
+                <p class="text-md font-monospace text-light mb-0">
+                  {{discribtion}}
+                </p>
+              </div>
+            </div>
+           
+          </div>
+            <div class="card-body py-5">
+
+             
+
+              <form method="POST">
+                {% csrf_token %}
+               
+                <h3>{{discribtion}}</h3>
+                <div class='row py-5'>
+                    <div class='col-3'>
+                        <input type="submit" value="بله" class="btn btn-{{color}} ml-3  pull-right col-12 btn-lg">
+                    </div>
+                    <div class='col-3'>
+                        <a href="../list" class="btn btn-success pull-right col-12 btn-lg ">خیر</a>
+                    </div>
+                    
+                    
+                </div>
+              
+            </div>
+        </div>
+      </div>
+</div>
+{% endblock content %}

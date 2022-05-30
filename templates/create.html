@@ -1,0 +1,56 @@
+{% extends 'base.html'%}
+
+{% block content %}
+
+<div class="container py-6">
+    <div class="row justify-content-md-center">
+        <div class="card card-frame col-8">
+          <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+            <div class="row">
+              <div class="icon icon-lg icon-shape bg-gradient-{{ color }} shadow-{{ color }} text-center border-radius-xl mt-n4 position-absolute">
+                <i class="material-icons opacity-10">{{icon_name}}</i>
+              </div>
+              <div class="bg-gradient-{{ color }} shadow-{{ color }} text-center border-radius-lg pt-4 pb-3">
+                <h6 class="text-white text-capitalize ps-3">{{ header_title }}</h6>
+                <p class="text-md font-monospace text-light mb-0">
+                  {{discribtion}}
+                </p>
+              </div>
+            </div>
+           
+          </div>
+            <div class="card-body">
+              <form action="" method="POST">
+                  {% csrf_token %}
+                  {% if columns == 1%}
+                    {% for field  in form.visible_fields %}
+
+                    <div class="input-group input-group-static mb-4">
+                      <label class="" for="{{ field.auto_id }}">
+                        {{ field.label }}
+                      </label>
+                      {{field }}
+                      {% if field.errors %}
+                        <div class="alert alert-danger" role="alert">
+                          {{ field.errors.as_text}}
+                        </div>
+                      {% endif %}
+                    </div>
+                   
+                    {% endfor %}
+                  {% endif %}
+
+                  
+                  
+                        <input type="submit" class="btn btn-lg bg-gradient-{{ color }} btn-lg w-100 mt-4 mb-0" value="ثبت">
+
+              </form>
+            </div>
+        </div>
+      </div>
+</div>
+
+    
+    
+   
+{% endblock content %}

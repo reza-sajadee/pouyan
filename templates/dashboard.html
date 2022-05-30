@@ -1,0 +1,314 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block style %}
+<link rel="stylesheet" type="text/css" href="{% static  '/css/dataTables.css' %}">
+
+
+
+{%endblock style%}
+{% block content %}
+<div class="container">
+  <div class="row justify-content-center my-2">
+    <div class="card  ">
+    
+      <div class="card-body">
+        <h4 class="mb-0 text-center">بخش ادمین</h4>
+        <p class="text-sm "></p>
+      </div>
+      <div class="row justify-content-center ">
+        <div class="col">
+          <article class="card2">
+            <div class="card__content">
+              <h3 class="card__title text-center py-2">عنوان </h3>
+              
+              <p class="card__description py-3">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است </p>
+            </div>
+          </article>
+        </div>
+        <div class="col">
+          <article class="card2">
+            <div class="card__content">
+              <h3 class="card__title text-center py-2">عنوان </h3>
+              
+              <p class="card__description py-3">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است </p>
+            </div>
+          </article>
+        </div>
+        <div class="col">
+          <article class="card2">
+            <div class="card__content">
+              <h3 class="card__title text-center py-2">عنوان </h3>
+              
+              <p class="card__description py-3">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است </p>
+            </div>
+          </article>
+          
+        </div>
+        <div class="col">
+          <article class="card2">
+            <div class="card__content">
+              <h3 class="card__title text-center py-2">عنوان </h3>
+              
+              <p class="card__description py-3">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است </p>
+            </div>
+          </article>
+          
+        </div>
+        
+      
+      </div>
+    
+
+    </div>
+
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+        <div class="card my-4">
+            <div class="card-header p-0 position-relative mt-4 mx-3 z-index-2">
+                <div class="bg-gradient-info shadow-info border-radius-lg px-3 pt-4 pb-3">
+                    <h6 class="text-white text-capitalize ps-3 text-center">  جداول راهنما </h6>
+                    <small class="text-center" > ( آخرین به روز رسانی {{lastUpdate}} )</small>
+                </div>
+            </div>
+            <div class="card-body px-0 pb-2">
+                <div class="row mx-3">                 
+                  <div class="tabs">
+                    <div class="single-tabs tabs-one">
+                       <ul class="nav nav-justified" id="myTab" role="tablist">
+                          <li class="nav-item">
+                             <a class="active  " id="tab-one-one-tab " data-bs-toggle="tab" href="#tab-one-one" role="tab"
+                                aria-controls="tab-one-one" aria-selected="true">اختیار خرید </a>
+                          </li>
+                          <li class="nav-item">
+                             <a id="tab-one-two-tab " data-bs-toggle="tab" href="#tab-one-two" role="tab"
+                                aria-controls="tab-one-two" aria-selected="false">اختیار فروش  </a>
+                          </li>
+                          <li class="nav-item">
+                            <a id="tab-one-three-tab " data-bs-toggle="tab" href="#tab-one-three" role="tab"
+                               aria-controls="tab-one-three" aria-selected="false">المان های محاسباتی   </a>
+                         </li>
+                       
+                         
+                         
+                       </ul>
+                       <div class="tab-content" id="myTabContent">
+                          <div class="tab-pane fade show active" id="tab-one-one" role="tabpanel" aria-labelledby="tab-one-one-tab">
+                             <div class="table-responsive my-5">
+                            
+                              <table id="callOption" class="table table-center uk-table uk-table-hover uk-table-striped align-items-center py-3 mb-0">
+                                <br>
+                                <thead>
+                                  
+                                  <tr>
+                                    
+                                    {% for header in call_header_table %}
+                                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">{{header}}</th>
+                                    {% endfor %}
+                                    
+                                  
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  
+                                
+                                  {%for datas in call_list_data%}
+                                    {% for key, values in datas.items %}
+                                    <tr>
+                                        
+                                        {% for v in values %}
+                                        <td class="narowFont overflow-hidden">{{v}}</td>
+                                        {% endfor %}
+                                        
+                                        
+                                    </tr>
+                                    {% endfor %}
+                                  {%endfor%}
+                                  
+                    
+                                            
+                                </tbody>
+                              </table>
+                              
+                              
+                            </div>
+                          </div>
+                          <div class="tab-pane fade" id="tab-one-two" role="tabpanel" aria-labelledby="tab-one-two-tab">
+                            <div class="table-responsive my-5">
+                              
+                              <table id="putOption" class="table table-center uk-table uk-table-hover uk-table-striped align-items-center py-3 mb-0">
+                                <br>
+                                <thead>
+                                  
+                                  <tr>
+                                    
+                                    {% for header in put_header_table %}
+                                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">{{header}}</th>
+                                    {% endfor %}
+                                    
+                                  
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  
+                                
+                                  {%for datas in put_list_data%}
+                                    {% for key, values in datas.items %}
+                                    <tr>
+                                        
+                                        {% for v in values %}
+                                        <td class="narowFont overflow-hidden">{{v}}</td>
+                                        {% endfor %}
+                                        
+                                        
+                                    </tr>
+                                    {% endfor %}
+                                  {%endfor%}
+                                  
+                    
+                                            
+                                </tbody>
+                              </table>
+                              
+                              
+                            </div>  
+                          </div>
+
+                          <div class="tab-pane fade" id="tab-one-three" role="tabpanel" aria-labelledby="tab-one-three-tab">
+                            <div class="table-responsive my-5">
+                              
+                              <table id="calcOption" class="table table-center uk-table uk-table-hover uk-table-striped align-items-center py-3 mb-0">
+                                <br>
+                                <thead>
+                                  
+                                  <tr>
+                                    
+                                    {% for header in dr_header_table %}
+                                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">{{header}}</th>
+                                    {% endfor %}
+                                    
+                                  
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  
+                                
+                                  {%for datas in dr_list_data%}
+                                    {% for key, values in datas.items %}
+                                    <tr>
+                                        
+                                        {% for v in values %}
+                                        <td class="narowFont overflow-hidden">{{v}}</td>
+                                        {% endfor %}
+                                        
+                                        
+                                    </tr>
+                                    {% endfor %}
+                                  {%endfor%}
+                                  
+                    
+                                            
+                                </tbody>
+                              </table>
+                              
+                              
+                            </div>  
+                          </div>
+                        
+                       </div>
+                    </div>
+                    <!-- tabs one -->
+                 </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+
+ 
+
+</div>
+
+
+
+
+
+    
+   
+{% endblock content %}
+
+
+{% block scripts %}
+<script>
+    var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+  var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+    console.log(5 + 6);
+    return new bootstrap.Popover(popoverTriggerEl)
+  })
+</script>
+
+<script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.js"></script>
+  
+  <script>
+    $(document).ready( function() {
+  $('#callOption').dataTable( {
+    "oLanguage": {
+      "oPaginate": {
+        "sNext": "صفحه بعدی",
+        "sPrevious": "صفحه قبلی"
+      },
+      "sEmptyTable": "اطلاعاتی برای نمایش وجود ندارد",
+      "sSearch": "جستجو   :  ",
+      "sInfo": "نمایش _START_ تا_END_ از تعداد کل _TOTAL_" ,
+      "sLengthMenu": "  تعداد در صفحه  _MENU_ ",
+      "sInfoEmpty": "رکوردی برای نمایش وجود ندارد"
+    
+    }
+  } );
+} );
+  </script>
+    <script>
+      $(document).ready( function() {
+    $('#putOption').dataTable( {
+      "oLanguage": {
+        "oPaginate": {
+          "sNext": "صفحه بعدی",
+          "sPrevious": "صفحه قبلی"
+        },
+        "sEmptyTable": "اطلاعاتی برای نمایش وجود ندارد",
+        "sSearch": "جستجو   :  ",
+        "sInfo": "نمایش _START_ تا_END_ از تعداد کل _TOTAL_" ,
+        "sLengthMenu": "  تعداد در صفحه  _MENU_ ",
+        "sInfoEmpty": "رکوردی برای نمایش وجود ندارد"
+      
+      }
+    } );
+  } );
+    </script>
+
+<script>
+  $(document).ready( function() {
+$('#calcOption').dataTable( {
+  "oLanguage": {
+    "oPaginate": {
+      "sNext": "صفحه بعدی",
+      "sPrevious": "صفحه قبلی"
+    },
+    "sEmptyTable": "اطلاعاتی برای نمایش وجود ندارد",
+    "sSearch": "جستجو   :  ",
+    "sInfo": "نمایش _START_ تا_END_ از تعداد کل _TOTAL_" ,
+    "sLengthMenu": "  تعداد در صفحه  _MENU_ ",
+    "sInfoEmpty": "رکوردی برای نمایش وجود ندارد"
+  
+  }
+} );
+} );
+</script>
+  {%endblock scripts%}
+

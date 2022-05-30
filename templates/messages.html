@@ -1,0 +1,29 @@
+
+{% if messages %}
+
+  {% for message in messages %}
+  <div class="alert {{message.tags}} alert-dismissible fade show" id="msg" role="alert">
+      <span class="alert-icon align-middle">
+        <span class="material-icons text-md">
+        thumb_up_off_alt
+        </span>
+      </span>
+      <span class="alert-text"><strong>توجه</strong>  </span>
+      <h4 class="py-1 text-white text-center">{{message}}</h4>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+      </button>
+  </div>
+    
+  {% endfor %}
+        
+
+
+{% endif %}
+    
+
+
+{% block script %}
+   
+{% endblock script %}
+    

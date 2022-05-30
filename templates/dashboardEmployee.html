@@ -1,0 +1,336 @@
+{% extends 'baseEmployee.html'%}
+{% load static %}
+{% block content %}
+
+<div class="container">
+  <div class="row  justify-content-center my-2">
+    <div class="col-xl-3 col-md-4 col-sm-6 col-sm-7 my-1"> 
+      <div class="card h-75 mb-2 overflow-hidden">
+        <div class="card-content neg-margin-1 ">
+          <div class="card-body ">
+            <div class=" d-flex justify-content-center ">
+              <a href="{% url 'ProcessMap'%}">
+                <div class="card-header">
+                  <div class="row  justify-content-center">
+                    <div class="col-10">
+                      <img   src="{% static '/img/map.png' %}" class="img-fluid d-md-none d-lg-block mx-auto d-block hover-opacity" alt="main_logo">
+                    </div>
+                    
+                  </div>
+                  
+                  <div class="row text-center">
+                    <hr class="dark horizontal my-2">
+                    
+                  <p>  نقشه فرآیندی </p>
+                  </div>
+                  
+                </div>
+              </a>
+              
+             
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-3 col-md-4 col-sm-6 col-sm-7 my-1"> 
+      <div class="card h-75 mb-2 overflow-hidden">
+        <div class="card-content neg-margin-1 ">
+          <div class="card-body ">
+            <div class=" d-flex justify-content-center ">
+              <a href="#">
+                <div class="card-header">
+                  <div class="row justify-content-center">
+                    <div class="col-10 ">
+                      <img   src="{% static '/img/privacy.png' %}" class="img-fluid d-md-none d-lg-block mx-auto d-block hover-opacity " alt="main_logo">
+                    </div>
+                   
+                  </div>
+                 
+                  
+                  <div class="row text-center">
+                    <hr class="dark horizontal my-2">
+                  
+                  <p> خط مشی</p>
+                  <span> </span> 
+                  </div>
+                  
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-3 col-md-4 col-sm-6 col-sm-7 my-1"> 
+      <div class="card h-75 pb-2 overflow-hidden">
+        <div class="card-content neg-margin-1 ">
+          <div class="card-body ">
+            <div class=" d-flex justify-content-center ">
+              <a href="#">
+                <div class="card-header">
+                  <div class="row justify-content-center">
+                    <div class="col-10 ">
+                      <img   src="{% static '/img/goal.png' %}" class="img-fluid d-md-none d-lg-block mx-auto d-block hover-opacity " alt="main_logo">
+                    </div>
+                   
+                  </div>
+                 
+                  
+                  <div class="row text-center">
+                    <hr class="dark horizontal my-2">
+                  
+                  <p>چشم انداز</p>
+                  <span> </span> 
+                  </div>
+                  
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+
+  </div>
+
+
+
+   
+</div>
+
+
+
+
+
+<div class="row neg-margin-1 justify-content-center ">
+  <div class="col-lg-10 neg-margin-1 col-sm-8 mx-0 ">
+    <div class=" card neg-margin-1  ">
+      <div class="row">
+        <div class="col-1">
+          <h1 class="vertical">بهمن 1400</h1>
+        </div>
+        <div class="col-8 p-0">
+          <div class="card-body ">
+            <h4 class="mb-0 d-sm-none d-xs-none d-md-none d-lg-block d-xl-block text-center">تقویم سازمانی</h4>
+            <h6 class="mb-0  d-md-block d-lg-none d-xl-none text-center">تقویم سازمانی</h6>
+            
+          
+            <div class="d-flex ">
+              <div class="container-fluid ">
+                <div class="calendar col-lg-12 col-md-12 mx-auto">
+                  
+                
+                  <ul class="weekdays">
+                    <li>
+                      <abbr title="ش">شنبه</abbr>
+                    </li>
+                    <li>
+                      <abbr title="ی">یک شنبه</abbr>
+                    </li>
+                    <li>
+                      <abbr title="د">دو شنبه</abbr>
+                    </li>
+                    <li>
+                      <abbr title="س">سه شنبه</abbr>
+                    </li>
+                    <li>
+                      <abbr title="چ">چهارشنبه</abbr>
+                    </li>
+                    <li>
+                      <abbr title="پ">پنج شنبه</abbr>
+                    </li>
+                    <li>
+                      <abbr title="ش">جمعه</abbr>
+                    </li>
+                  </ul>
+                
+                  <ol class="day-grid">
+                  
+                    <li class="monthprev ">27</li>
+                    <li class="monthprev" >28</li>
+                    <li class="monthprev" >29</li>
+                    <li class="monthprev" >30</li>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+    
+                    
+                  
+                    
+                    <a href="#"><li data-bs-toggle="tooltip" data-bs-placement="top" title=" ممیزی :
+                    1- گروه انرژی و سیستم‌های هوشمند کنترل از راه دور
+                    2- انبار ناحیه دو (صاحبقرانیه)
+                    3- ناحیه دو (نیاوران) 
+                    4- معاونت مهندسی و توسعه
+                    5- دفتر نظارت بر بهره‌برداری از تأسیسات آب
+                    6- دفتر نظارت بر بهره‌برداری از تأسیسات فاضلاب
+                    7- دفتر مدیریت مصرف آب و کاهش آب بدون درآمد" 
+                    data-container="body" data-animation="true" class="organize-event ">4</li><div class="rectangle">
+                      <div class="rounded circle personal-event" ></div>  
+                    </div> </a>
+                    
+    
+                    
+                    <a href="#"><li data-bs-toggle="tooltip" data-bs-placement="top" title=" ممیزی :
+                    1- دفتر حقوقی و رسیدگی به شکایات
+                    2- دفتر روابط عمومی و آموزش همگانی
+                    3- ناحیه سه و انبار ناحیه"
+                    data-container="body" data-animation="true" class="organize-event">5</li><div class="rectangle">
+                      <div class="rounded circle personal-event" ></div>  
+                    </div></a>
+                    <a href="#"><li data-bs-toggle="tooltip" data-bs-placement="top" title=" ممیزی :
+                    1- قسمت انبارها
+                    2- دفتر کنترل کیفیت بهداشت آب و فاضلاب"
+                    data-container="body" data-animation="true" class="event postpone-event">6</li>
+                   
+                   </a>
+                    <a href="#"><li data-bs-toggle="tooltip" data-bs-placement="top" title=" ممیزی :
+                    1- امور مشترکین ناحیه یک(دیباجی)
+                    2- دفتر مدیریت بحران و پدافند غیرعامل
+                    3- گروه بهداشت، ایمنی و محیط‌زیست
+                    4- ناحیه یک (زرگنده)"
+                    data-container="body" data-animation="true" class="organize-event">7</li>
+                    <div class="rectangle">
+                      <div class="rounded circle " ></div>  
+                    </div></a>
+                    <li>8</li>
+                    <li>9</li>
+                    <li>10</li>
+                    <a href="#"><li data-bs-toggle="tooltip" data-bs-placement="top" title=" ممیزی :
+                    1- گروه فن‌آوری اطلاعات و ارتباطات
+                    2- آموزش / بهره‌وری منابع‌انسانی
+                    3- دفتر آمار، برنامه و بودجه
+                    4- مدیرعامل
+                    5- امور اداری
+                    6- دفتر قراردادها و امور بازرگانی
+                    7- خدمات عمومی
+                    8- معاونت مشترکین و درآمد" 
+                    data-container="body" data-animation="true" class="done-event">11</li></a>
+                    <li>12</li>
+                    <li>13</li>
+                    <li>14</li>
+                    <li>15</li>
+                    <li>16</li>
+                    <a href="#"><li  data-bs-toggle="tooltip" data-bs-placement="top" title=" ممیزی :
+                    1- دفتر پژوهش و بهبود بهره‌وری"
+    
+                    data-container="body" data-animation="true" class="done-event">17</li></a>
+                    <li>18</li>
+                    <a href="#"><li  data-bs-toggle="tooltip" data-bs-placement="top" title="1- ارزیابی ریسک"
+          
+                      data-container="body" data-animation="true" class="personal-event">19</li>
+                      <div class="rectangle">
+                        <div class="rounded circle postpone-event" ></div>  
+                      </div>
+                    </a>
+                    <a href="#"><li  data-bs-toggle="tooltip" data-bs-placement="top" title="1- ارزیابی ریسک"
+          
+                      data-container="body" data-animation="true" class="organize-event">20</li>
+                      
+                    </a>
+                    <li>21</li>
+                    <li>22</li>
+                    <li>23</li>
+                    <li>24</li>
+                    <li>25</li>
+                    <li>26</li>
+                    <li>27</li>
+                    <a href="#"><li  data-bs-toggle="tooltip" data-bs-placement="top" title="1- بازنگری و مدیریت"
+          
+                      data-container="body" data-animation="true" class="done-event">28</li>
+                      
+                    </a>
+    
+                    <li >29</li>
+                    <li >30</li>
+                
+                  </ol>
+                    
+                </div>
+                  
+    
+              
+    
+              </div>
+    
+            </div>
+          </div>
+        </div>
+        <div class="col-3 p-0">
+          
+          <ul class="nav table-info-ul flex-column p-0">
+            <li class="nav-item">
+              <div class="row">
+                <div class="col-1">
+                  <div class="rounded circle-info personal-event " ></div>
+                </div>
+                <div  class="col-10">
+                  <p class="text-right table-info-text">  رویداد های شخصی </p>
+                </div>
+                
+              </div>
+            </li>
+            <li class="nav-item">
+              <div class="row">
+                <div class="col-1">
+                  <div class="rounded circle-info organize-event " ></div>
+                </div>
+                <div  class="col-10">
+                  <p class="text-right table-info-text">  رویداد های سازمان  </p>
+                </div>
+                
+              </div>
+            </li>
+          
+            <li class="nav-item">
+              <div class="row">
+                <div class="col-1">
+                  <div class="rounded circle-info postpone-event " ></div>
+                </div>
+                <div  class="col-10">
+                  <p class="text-right table-info-text">رویداد های عقب افتاده  </p>
+                </div>
+                
+              </div>
+              
+            </li>
+
+            <li class="nav-item">
+              <div class="row">
+                <div class="col-1">
+                  <div class="rounded circle-info done-event " ></div>
+                </div>
+                <div  class="col-10">
+                  <p class="text-right table-info-text">رویداد های تکمیل شده  </p>
+                </div>
+                
+              </div>
+              
+            </li>
+          </ul>
+
+
+          
+        </div>
+      </div>     
+    </div>
+  </div>
+</div>
+    
+   
+{% endblock content %}
+
+
+{% block scripts %}
+<script>
+    var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+  var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+    console.log(5 + 6);
+    return new bootstrap.Popover(popoverTriggerEl)
+  })
+</script>
+
+
+  {%endblock scripts%}

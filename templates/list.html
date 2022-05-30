@@ -1,0 +1,122 @@
+{% extends 'base.html'%}
+
+{% block style %}
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.css">
+
+
+
+{%endblock style%}
+
+{% block content %}
+<div class="container py-6">
+  <div class="row justify-content-md-center">
+    <div class="card card-fram col-12">
+      <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+        <div class="row">
+          <div class="icon icon-lg icon-shape bg-gradient-{{ color }} shadow-{{ color }} text-center border-radius-xl mt-n4 position-absolute">
+            <i class="material-icons opacity-10">{{icon_name}}</i>
+          </div>
+          <div class="bg-gradient-{{ color }} shadow-{{ color }} text-center border-radius-lg pt-4 pb-3">
+            <h6 class="text-white text-capitalize ps-3">{{ header_title }}</h6>
+            <p class="text-md font-monospace text-light mb-0">
+              {{discribtion}}
+            </p>
+          </div>
+        </div>
+      </div>
+     
+      
+    
+        <div class="table-responsive my-5">
+          
+          <table id="example" class="table uk-table uk-table-hover uk-table-striped align-items-center py-3 mb-0">
+            <br>
+            <thead>
+              
+              <tr>
+                
+                {% for header in header_table %}
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">{{header}}</th>
+                {% endfor %}
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">ویرایش</th>
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">حذف</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+            
+              {%for datas in list_data%}
+                {% for key, values in datas.items %}
+                <tr>
+                    
+                    {% for v in values %}
+                    <td class="narowFont overflow-hidden">{{v}}</td>
+                    {% endfor %}
+                    <td>
+                      
+                      <a class="btn btn-link text-dark px-3 mb-0" method="GET" href="{{ key }}">
+                        <i class="material-icons text-sm me-2">edit</i>
+                        ویرایش
+                      </a>
+                    </td>
+                    <td>
+          
+                      <a class="btn btn-link text-danger text-gradient px-3 mb-0" method="POST" href="delete/{{ key }}">
+                        <i class="material-icons text-sm me-2">delete</i>
+                        حذف کردن
+                      </a>
+                    </td>
+                </tr>
+                {% endfor %}
+              {%endfor%}
+              
+
+                        
+            </tbody>
+          </table>
+          
+          <div class="card-footer text-center d-flex">
+            <a class="btn btn btn-lg w-100 btn-outline-info"  href="./create">
+            
+              افزودن
+            </a>
+          </div>
+        </div>
+      </div>
+       
+    
+    </div>
+  </div>
+</div>
+  {% endblock content %}
+
+
+  {% block scripts %}
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.js"></script>
+  
+  <script>
+    $(document).ready( function() {
+  $('#example').dataTable( {
+    "oLanguage": {
+      "oPaginate": {
+        "sNext": "صفحه بعدی",
+        "sPrevious": "صفحه قبلی"
+      },
+      "sEmptyTable": "اطلاعاتی برای نمایش وجود ندارد",
+      "sSearch": "جستجو   :  ",
+      "sInfo": "نمایش _START_ تا_END_ از تعداد کل _TOTAL_" ,
+      "sLengthMenu": "  تعداد در صفحه  _MENU_ ",
+      "sInfoEmpty": "رکوردی برای نمایش وجود ندارد"
+    
+    }
+  } );
+} );
+  </script>
+  {%endblock scripts%}
+  
+
+
