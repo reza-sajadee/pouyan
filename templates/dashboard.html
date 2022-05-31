@@ -254,10 +254,48 @@
   integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
   crossorigin="anonymous"></script>
   <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.js"></script>
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script>
+  <script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+  <script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.html5.min.js"></script>
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.print.min.js"></script>
   
   <script>
     $(document).ready( function() {
-  $('#callOption').dataTable( {
+  var table = $('#callOption').dataTable( {
+    dom: 'Bfrtip', 
+    buttons: [
+          {
+              extend: 'csvHtml5',
+              text: 'Export csv',
+              charset: 'utf-8',
+              extension: '.csv',
+              fieldSeparator: ',',
+              fieldBoundary: '',
+              filename: 'callOption',
+              className: 'btn btn-outline-success',
+              bom: true
+          },
+          {
+              extend: 'copyHtml5',
+              exportOptions: {
+                  columns: [ 0, 1, 2, 3,4,5 ]
+              },
+              className: 'btn btn-outline-secondary'
+          },
+              
+              
+              
+          {
+              extend: 'print',
+              exportOptions: {
+                  columns: [ 0, 1, 4,5 ,6,7,8,9,10,11,12,13,14,15,16]
+              },
+              orientation: 'landscape',
+              className: 'btn btn-outline-danger',
+              pageSize: 'LEGAL',
+          },
+      ],
     "oLanguage": {
       "oPaginate": {
         "sNext": "صفحه بعدی",
@@ -276,6 +314,39 @@
     <script>
       $(document).ready( function() {
     $('#putOption').dataTable( {
+      dom: 'Bfrtip', 
+    buttons: [
+          {
+              extend: 'csvHtml5',
+              text: 'Export csv',
+              charset: 'utf-8',
+              extension: '.csv',
+              fieldSeparator: ',',
+              fieldBoundary: '',
+              filename: 'putOption',
+              className: 'btn btn-outline-success',
+              bom: true
+          },
+          {
+              extend: 'copyHtml5',
+              exportOptions: {
+                  columns: [ 0, 1, 2, 3,4,5 ]
+              },
+              className: 'btn btn-outline-secondary'
+          },
+              
+              
+              
+          {
+              extend: 'print',
+              exportOptions: {
+                  columns: [ 0, 1, 4,5 ,6,7,8,9,10,11,12,13,14,15,16]
+              },
+              orientation: 'landscape',
+              className: 'btn btn-outline-danger',
+              
+          },
+      ],
       "oLanguage": {
         "oPaginate": {
           "sNext": "صفحه بعدی",
@@ -290,11 +361,46 @@
       }
     } );
   } );
+  table.buttons().container()
+    .appendTo( $('.col-sm-6:eq(0)', table.table().container() ) );
     </script>
 
 <script>
   $(document).ready( function() {
 $('#calcOption').dataTable( {
+  dom: 'Bfrtip', 
+    buttons: [
+          {
+              extend: 'csvHtml5',
+              text: 'Export csv',
+              charset: 'utf-8',
+              extension: '.csv',
+              fieldSeparator: ',',
+              fieldBoundary: '',
+              filename: 'calcOption',
+              className: 'btn btn-outline-success',
+              bom: true
+          },
+          {
+              extend: 'copyHtml5',
+              exportOptions: {
+                  columns: [ 0, 1, 2, 3,4,5 ]
+              },
+              className: 'btn btn-outline-secondary'
+          },
+              
+              
+              
+          {
+              extend: 'print',
+              exportOptions: {
+                  columns: [ 0, 1, 2, 3,4,5 ]
+              },
+              orientation: 'landscape',
+              className: 'btn btn-outline-danger',
+              pageSize: 'LEGAL',
+          },
+      ],
   "oLanguage": {
     "oPaginate": {
       "sNext": "صفحه بعدی",
@@ -305,8 +411,9 @@ $('#calcOption').dataTable( {
     "sInfo": "نمایش _START_ تا_END_ از تعداد کل _TOTAL_" ,
     "sLengthMenu": "  تعداد در صفحه  _MENU_ ",
     "sInfoEmpty": "رکوردی برای نمایش وجود ندارد"
+    
+  },
   
-  }
 } );
 } );
 </script>
