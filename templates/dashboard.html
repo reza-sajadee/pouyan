@@ -19,7 +19,7 @@
         <div class="col">
           <article class="card2">
             <div class="card__content">
-              <h3 class="card__title text-center py-2">عنوان </h3>
+              <h4 class="card__title text-center py-2">اختیار معامله </h4>
               
               <p class="card__description py-3">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است </p>
             </div>
@@ -28,7 +28,7 @@
         <div class="col">
           <article class="card2">
             <div class="card__content">
-              <h3 class="card__title text-center py-2">عنوان </h3>
+              <h4 class="card__title text-center py-2">مدیریت ریسک </h4>
               
               <p class="card__description py-3">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است </p>
             </div>
@@ -37,7 +37,7 @@
         <div class="col">
           <article class="card2">
             <div class="card__content">
-              <h3 class="card__title text-center py-2">عنوان </h3>
+              <h4 class="card__title text-center py-2">کدال بان </h4>
               
               <p class="card__description py-3">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است </p>
             </div>
@@ -47,7 +47,7 @@
         <div class="col">
           <article class="card2">
             <div class="card__content">
-              <h3 class="card__title text-center py-2">عنوان </h3>
+              <h4 class="card__title text-center py-2">بهینه سازی </h4>
               
               <p class="card__description py-3">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است </p>
             </div>
@@ -69,7 +69,8 @@
             <div class="card-header p-0 position-relative mt-4 mx-3 z-index-2">
                 <div class="bg-gradient-info shadow-info border-radius-lg px-3 pt-4 pb-3">
                     <h6 class="text-white text-capitalize ps-3 text-center">  جداول راهنما </h6>
-                    <small class="text-center" > ( آخرین به روز رسانی {{lastUpdate}} )</small>
+                    <small class="text-center" > </small>
+                    <p class="text-center"><strong>( آخرین به روز رسانی {{lastUpdate}} )</strong></p>
                 </div>
             </div>
             <div class="card-body px-0 pb-2">
@@ -264,6 +265,7 @@
     $(document).ready( function() {
   var table = $('#callOption').dataTable( {
     dom: 'Bfrtip', 
+    order: [[5, 'desc']],
     buttons: [
           {
               extend: 'csvHtml5',
@@ -315,6 +317,7 @@
       $(document).ready( function() {
     $('#putOption').dataTable( {
       dom: 'Bfrtip', 
+      order: [[5, 'desc']],
     buttons: [
           {
               extend: 'csvHtml5',
@@ -369,6 +372,7 @@
   $(document).ready( function() {
 $('#calcOption').dataTable( {
   dom: 'Bfrtip', 
+  order: [[5, 'desc']],
     buttons: [
           {
               extend: 'csvHtml5',
